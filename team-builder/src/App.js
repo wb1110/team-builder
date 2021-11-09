@@ -1,6 +1,7 @@
-// import './App.css';
+import './App.css';
 import React, {   useState  } from 'react';
 import Form from './Form';
+import Member from './Member';
 
 function App() {
 
@@ -19,6 +20,8 @@ function App() {
     setFormValues({ ...formValues, name: "", email: "", role: ""});
   }
 
+  
+
   const change = (evt) => {
     const {name, value} = evt.target;
     setFormValues({ ...formValues, [name]: value})
@@ -28,6 +31,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Form formValues={formValues} team={team} submit={submit} change={change}/>
+        {team.map(member => {
+          return (
+            <Member key={member.name} details={member}/>
+          )
+          })
+        }
       </header>
     </div>
   );

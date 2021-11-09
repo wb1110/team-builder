@@ -1,10 +1,9 @@
 import React from 'react';
 
 function Form(props) {
-console.log(props);
-const formValues = props.formValues;
-const change = props.change;
-const submit = props.submit;
+  const formValues = props.formValues;
+  const change = props.change;
+  const submit = props.submit;
   
   return (
     <div className="App">
