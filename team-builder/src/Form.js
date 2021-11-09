@@ -1,24 +1,10 @@
-import React, {   useState  } from 'react';
+import React from 'react';
 
-function Form() {
-  const [formValues, setFormValues] = useState({name: "", email: "", role: ""});
-  const [team, setTeam] = useState([]);
-
-  const submit = (evt) => {
-    evt.preventDefault();
-    const newMember = {
-      name: formValues.name.trim(),
-      email: formValues.email.trim(),
-      role: formValues.role.trim()
-    }
-    setTeam(team.concat(newMember));
-    setFormValues({ ...formValues, name: "", email: "", role: ""});
-  }
-
-  const change = (evt) => {
-    const {name, value} = evt.target;
-    setFormValues({ ...formValues, [name]: value})
-  }
+function Form(props) {
+console.log(props);
+const formValues = props.formValues;
+const change = props.change;
+const submit = props.submit;
   
   return (
     <div className="App">
