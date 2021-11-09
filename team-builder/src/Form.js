@@ -30,6 +30,7 @@ const submit = props.submit;
             <select value={formValues.role} name="role" onChange={change}>
               <option value="">Select a Role</option>
               <option value="Junior Developer">Junior Developer</option>
+              <option value="Senior Developer">Senior Developer</option>
             </select>
           </label>
           <input value="Submit" type="submit"  />
