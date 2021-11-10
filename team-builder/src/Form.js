@@ -32,6 +32,13 @@ function Form(props) {
               <option value="Senior Developer">Senior Developer</option>
             </select>
           </label>
+          <label>Is Entitled?
+            <input 
+            name="entitled" 
+            type="checkbox" 
+            onChange={change} 
+            checked={formValues.entitled} />
+          </label>
           <input value="Submit" type="submit"  />
           
         </form>

@@ -5,7 +5,7 @@ import Member from './Member';
 
 function App() {
 
-  const [formValues, setFormValues] = useState({name: "", email: "", role: ""});
+  const [formValues, setFormValues] = useState({name: "", email: "", role: "", entitled:false});
   const [team, setTeam] = useState([]);
 
   
@@ -14,17 +14,19 @@ function App() {
     const newMember = {
       name: formValues.name.trim(),
       email: formValues.email.trim(),
-      role: formValues.role
+      role: formValues.role,
+      entitled: formValues.entitled
     }
     setTeam(team.concat(newMember));
-    setFormValues({ ...formValues, name: "", email: "", role: ""});
+    setFormValues({ ...formValues, name: "", email: "", role: "", entitled:false});
   }
 
   
 
   const change = (evt) => {
-    const {name, value} = evt.target;
-    setFormValues({ ...formValues, [name]: value})
+    const {name, value, type, checked} = evt.target;
+    const updatedValues = type === 'checkbox' ? checked : value;
+    setFormValues({ ...formValues, [name]: updatedValues})
   }
 
   return (
